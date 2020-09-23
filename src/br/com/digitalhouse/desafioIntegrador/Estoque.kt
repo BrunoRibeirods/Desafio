@@ -13,7 +13,9 @@ class Estoque(
     fun cadastrarColecao(colecao: ColecaoLivro){
         estoqueColecaoLivro[contador] = colecao
         contador++
+        println(contador)
     }
+
 
     fun consultarLivro(cod: Long){
         for(consulta in estoqueLivro){
@@ -33,15 +35,17 @@ class Estoque(
             if(livro.codigo == cod){
                 println("Livro -> ${livro.titulo} -> Vendido!")
                 estoqueLivro.remove(livro)
+                return
             }
         }
 
         if (cod in estoqueColecaoLivro.keys) {
-            println("Coleção -> ${estoqueColecaoLivro[cod]}-> Vendida!")
+            println("Coleção -> ${estoqueColecaoLivro[cod]?.descricao} -> Vendida!")
             estoqueColecaoLivro.remove(cod)
-        }else{
-            println("Livro não encontrado.")
+            return
         }
+
+        println("Livro não encontrado.")
 
     }
 }
