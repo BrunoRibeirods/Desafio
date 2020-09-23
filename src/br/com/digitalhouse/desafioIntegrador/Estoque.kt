@@ -27,7 +27,7 @@ class Estoque(
                 return
             }
         }
-        println("Não encontrado")
+        println("Não encontrado!")
     }
 
     fun efetuarVenda(cod: Long){
@@ -45,9 +45,7 @@ class Estoque(
             return
         }
 
-
         println("Livro não encontrado.")
-
 
     }
 }
