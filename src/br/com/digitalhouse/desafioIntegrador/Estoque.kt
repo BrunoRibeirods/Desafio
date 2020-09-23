@@ -22,10 +22,10 @@ class Estoque(
                 println("Autor: ${consulta.autor}")
                 println("Ano: ${consulta.anoLancamento}")
                 println("Preço: ${consulta.preco}")
-            }else{
-                println("Livro não encontrado.")
+                return
             }
         }
+        println("Não encontrado!")
     }
 
     fun efetuarVenda(cod: Long){
